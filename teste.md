@@ -300,6 +300,40 @@ Método CalcularConsumo():
 ```
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
+
+resposta-
+
+```javascript
+class Veiculo{
+    constructor(modelo, ano){
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+    calcularConsumo(){
+    }   
+}
+class Carro extends Veiculo{
+    constructor(modelo, ano, quilometragem, eficiencia){
+        super(modelo, ano);
+        this.quilometragem = quilometragem;
+        this.eficiencia = eficiencia;
+    }
+    calcularConsumo(){
+        return this.quilometragem / this.eficiencia;
+    }
+}
+
+class Moto extends Veiculo{
+constructor(modelo, ano, quilometragem, eficiencia){
+    super(modelo, ano)
+    this.quilometragem = quilometragem ;
+    this.eficiencia = eficiencia;
+}
+calcularConsumo(){
+    return this.quilometragem / this.eficiencia
+}
+}
+```
 ______
 
 **9)** Você é um cientista da NASA e está ajudando no desenvolvimento de um sistema de pouso para sondas espaciais em Marte. Seu objetivo é calcular o tempo necessário para que a sonda reduza sua velocidade até um nível seguro para pouso, considerando uma velocidade inicial de entrada na atmosfera marciana e uma taxa de desaceleração constante causada pelo atrito atmosférico e retrofoguetes.
@@ -314,7 +348,7 @@ Considere a fórumla de atualização velocidade:
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
 
-reposta- 
+resposta- 
 
     Algoritmo CalcularTempoPouso
     Entrada: velocidadeInicial, desaceleracao, tempoMaximo, velocidadeSegura
@@ -329,7 +363,7 @@ reposta-
         Escreva "Tempo máximo excedido. Pouso não seguro!"
     Senão
         Escreva "Tempo necessário para pouso: " + tempo
-FimAlgoritmo
+    FimAlgoritmo
 
 ______
 
@@ -363,3 +397,33 @@ Escrever("Total de investimentos acumulados:")
 ImprimirMatriz(totalInvestimentos)  
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+resposta-
+
+```javascript
+FUNÇÃO MultiplicarMatrizesInvestimento(matrizA, matrizB):
+#Verifica se o número de colunas da matrizA é igual ao numero de linhas da matrizB
+Se colunas(matrizA) ≠ linhas(matrizB) então:
+Retornar ‘As matrizes não podem ser multiplicadas.’
+
+SENÃO
+   linhas <- tamanho(matrizA)
+   colunas <- tamanho(matrizB[0])  
+  matrizResultado <- novaMatriz(linhas,colunas)
+
+    Para i de 0 até linhas-1 faça:
+        Para j de 0 até colunas-1 faça:
+            Para k de 0 até colunas-1 faça:
+                matrizResultado[i][j] <- matrizResultado[i][j] + (matrizA[i][k] * matrizB[k][j])
+
+
+Retornar matrizResultado
+# Exemplo da função
+investimentosAno1 <- [[1000, 2000], [1500, 2500]]
+fatoresCrescimento <- [[1.1, 0.9], [1.2, 1.3]]
+
+resultadoInvestimentos <- MultiplicarMatrizesInvestimento(investimentosAno1, fatoresCrescimento)
+
+Escrever("Resultado dos investimentos:")
+ImprimirMatriz(resultadoInvestimentos)
+```
