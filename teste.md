@@ -272,8 +272,8 @@ Implemente um pseudocódigo que receba o valor total da compra e exiba a classif
 ______
 resposta- 
 
-Algoritmo ClassificarPedido
-    Entrada: valorTotal
+
+  
     
     Se valorTotal < 50 então
         Escreva "Frete não disponível!"
